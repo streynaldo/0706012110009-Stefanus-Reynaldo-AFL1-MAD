@@ -97,172 +97,187 @@ while(choose?.lowercased() != "q"){
     }
     
     if(choose == "1"){
-        getMenu(menu: menuTukuSorted, storeName: resto[0])
-        choose = readLine()?.lowercased()
-        while((Int(choose ?? "") ?? 0 > menuTuku.count || Int(choose ?? "") ?? 0 < 1) && choose?.lowercased() != "b"){
-            print("Wrong Choice")
+        while(true){
+            getMenu(menu: menuTukuSorted, storeName: resto[0])
             choose = readLine()?.lowercased()
-        }
-        
-        if(choose?.lowercased() == "b"){
-            continue
-        }else if let check = Int(choose ?? ""){
-            print("""
-                  \(menuTukuSorted[Int(choose!)!-1].0) @ \(menuTukuSorted[Int(choose!)!-1].1)
-                  How many \(menuTukuSorted[Int(choose!)!-1].0) do you want to buy?
-                  """)
-            addqty = (readLine()?.lowercased())!
-            while(true){
-                if let check = Double(addqty){
-                    if(Double(addqty)! > 0){
-                        break
+            while((Int(choose ?? "") ?? 0 > menuTuku.count || Int(choose ?? "") ?? 0 < 1) && choose?.lowercased() != "b"){
+                print("Wrong Choice")
+                choose = readLine()?.lowercased()
+            }
+            
+            if(choose?.lowercased() == "b"){
+                break
+            }else if let check = Int(choose ?? ""){
+                print("""
+                      \(menuTukuSorted[Int(choose!)!-1].0) @ \(menuTukuSorted[Int(choose!)!-1].1)
+                      How many \(menuTukuSorted[Int(choose!)!-1].0) do you want to buy?
+                      """)
+                addqty = (readLine()?.lowercased())!
+                while(true){
+                    if let check = Double(addqty){
+                        if(Double(addqty)! > 0){
+                            break
+                        }else{
+                            print("Wrong Input")
+                            addqty = (readLine()?.lowercased())!
+                        }
                     }else{
                         print("Wrong Input")
                         addqty = (readLine()?.lowercased())!
                     }
-                }else{
-                    print("Wrong Input")
-                    addqty = (readLine()?.lowercased())!
                 }
-            }
-//            addqty = (readLine()?.lowercased())!
+    //            addqty = (readLine()?.lowercased())!
 
-            buy(namaMenu: (menuTukuSorted[Int(choose!)!-1].0), qty: Double(addqty)!, harga: Double((menuTukuSorted[Int(choose!)!-1].1)), storeName: resto[0])
-            print("Thankyou For Ordering")
+                buy(namaMenu: (menuTukuSorted[Int(choose!)!-1].0), qty: Double(addqty)!, harga: Double((menuTukuSorted[Int(choose!)!-1].1)), storeName: resto[0])
+                print("Thankyou For Ordering")
+            }
         }
+        
         
     }
     else if(choose == "2"){
-        getMenu(menu: menuGotriSorted, storeName: resto[1])
-        choose = readLine()?.lowercased()
-        while((Int(choose ?? "") ?? 0 > menuGotri.count || Int(choose ?? "") ?? 0 < 1) && choose?.lowercased() != "b"){
-            print("Wrong Choice")
+        while(true){
+            getMenu(menu: menuGotriSorted, storeName: resto[1])
             choose = readLine()?.lowercased()
-        }
-        if(choose?.lowercased() == "b"){
-            continue
-        }else if let check = Int(choose ?? ""){
-            print("""
-                  \(menuGotriSorted[Int(choose!)!-1].0) @ \(menuGotriSorted[Int(choose!)!-1].1)
-                  How many \(menuGotriSorted[Int(choose!)!-1].0) do you want to buy?
-                  """)
-            addqty = (readLine()?.lowercased())!
-            while(true){
-                if let check = Double(addqty){
-                    if(Double(addqty)! > 0){
-                        break
+            while((Int(choose ?? "") ?? 0 > menuGotri.count || Int(choose ?? "") ?? 0 < 1) && choose?.lowercased() != "b"){
+                print("Wrong Choice")
+                choose = readLine()?.lowercased()
+            }
+            if(choose?.lowercased() == "b"){
+                break
+            }else if let check = Int(choose ?? ""){
+                print("""
+                      \(menuGotriSorted[Int(choose!)!-1].0) @ \(menuGotriSorted[Int(choose!)!-1].1)
+                      How many \(menuGotriSorted[Int(choose!)!-1].0) do you want to buy?
+                      """)
+                addqty = (readLine()?.lowercased())!
+                while(true){
+                    if let check = Double(addqty){
+                        if(Double(addqty)! > 0){
+                            break
+                        }else{
+                            print("Wrong Input")
+                            addqty = (readLine()?.lowercased())!
+                        }
                     }else{
                         print("Wrong Input")
                         addqty = (readLine()?.lowercased())!
                     }
-                }else{
-                    print("Wrong Input")
-                    addqty = (readLine()?.lowercased())!
                 }
+                
+                buy(namaMenu: (menuGotriSorted[Int(choose!)!-1].0), qty: Double(addqty)!, harga: Double((menuGotriSorted[Int(choose!)!-1].1)), storeName: resto[1])
+                print("Thankyou For Ordering")
             }
-            
-            buy(namaMenu: (menuGotriSorted[Int(choose!)!-1].0), qty: Double(addqty)!, harga: Double((menuGotriSorted[Int(choose!)!-1].1)), storeName: resto[1])
-            print("Thankyou For Ordering")
         }
+        
     }
     else if(choose == "3"){
-        getMenu(menu: menuLieSorted, storeName: resto[2])
-        choose = readLine()?.lowercased()
-        while((Int(choose ?? "") ?? 0 > menuLie.count || Int(choose ?? "") ?? 0 < 1) && choose?.lowercased() != "b"){
-            print("Wrong Choice")
+        while(true){
+            getMenu(menu: menuLieSorted, storeName: resto[2])
             choose = readLine()?.lowercased()
-        }
-        if(choose?.lowercased() == "b"){
-            continue
-        }else if let check = Int(choose ?? ""){
-            print("""
-                  \(menuLieSorted[Int(choose!)!-1].0) @ \(menuLieSorted[Int(choose!)!-1].1)
-                  How many \(menuLieSorted[Int(choose!)!-1].0) do you want to buy?
-                  """)
-            addqty = (readLine()?.lowercased())!
-            while(true){
-                if let check = Double(addqty){
-                    if(Double(addqty)! > 0){
-                        break
+            while((Int(choose ?? "") ?? 0 > menuLie.count || Int(choose ?? "") ?? 0 < 1) && choose?.lowercased() != "b"){
+                print("Wrong Choice")
+                choose = readLine()?.lowercased()
+            }
+            if(choose?.lowercased() == "b"){
+                break
+            }else if let check = Int(choose ?? ""){
+                print("""
+                      \(menuLieSorted[Int(choose!)!-1].0) @ \(menuLieSorted[Int(choose!)!-1].1)
+                      How many \(menuLieSorted[Int(choose!)!-1].0) do you want to buy?
+                      """)
+                addqty = (readLine()?.lowercased())!
+                while(true){
+                    if let check = Double(addqty){
+                        if(Double(addqty)! > 0){
+                            break
+                        }else{
+                            print("Wrong Input")
+                            addqty = (readLine()?.lowercased())!
+                        }
                     }else{
                         print("Wrong Input")
                         addqty = (readLine()?.lowercased())!
                     }
-                }else{
-                    print("Wrong Input")
-                    addqty = (readLine()?.lowercased())!
                 }
+                
+                buy(namaMenu: (menuLieSorted[Int(choose!)!-1].0), qty: Double(addqty)!, harga: Double((menuLieSorted[Int(choose!)!-1].1)), storeName: resto[2])
+                print("Thankyou For Ordering")
             }
-            
-            buy(namaMenu: (menuLieSorted[Int(choose!)!-1].0), qty: Double(addqty)!, harga: Double((menuLieSorted[Int(choose!)!-1].1)), storeName: resto[2])
-            print("Thankyou For Ordering")
         }
+        
     }
     else if(choose == "4"){
-        getMenu(menu: menuKopteSorted, storeName: resto[3])
-        choose = readLine()?.lowercased()
-        while((Int(choose ?? "") ?? 0 > menuKopte.count || Int(choose ?? "") ?? 0 < 1) && choose?.lowercased() != "b"){
-            print("Wrong Choice")
+        while(true){
+            getMenu(menu: menuKopteSorted, storeName: resto[3])
             choose = readLine()?.lowercased()
-        }
-        if(choose?.lowercased() == "b"){
-            continue
-        }else if let check = Int(choose ?? ""){
-            print("""
-                  \(menuKopteSorted[Int(choose!)!-1].0) @ \(menuKopteSorted[Int(choose!)!-1].1)
-                  How many \(menuKopteSorted[Int(choose!)!-1].0) do you want to buy?
-                  """)
-            addqty = (readLine()?.lowercased())!
-            while(true){
-                if let check = Double(addqty){
-                    if(Double(addqty)! > 0){
-                        break
+            while((Int(choose ?? "") ?? 0 > menuKopte.count || Int(choose ?? "") ?? 0 < 1) && choose?.lowercased() != "b"){
+                print("Wrong Choice")
+                choose = readLine()?.lowercased()
+            }
+            if(choose?.lowercased() == "b"){
+                break
+            }else if let check = Int(choose ?? ""){
+                print("""
+                      \(menuKopteSorted[Int(choose!)!-1].0) @ \(menuKopteSorted[Int(choose!)!-1].1)
+                      How many \(menuKopteSorted[Int(choose!)!-1].0) do you want to buy?
+                      """)
+                addqty = (readLine()?.lowercased())!
+                while(true){
+                    if let check = Double(addqty){
+                        if(Double(addqty)! > 0){
+                            break
+                        }else{
+                            print("Wrong Input")
+                            addqty = (readLine()?.lowercased())!
+                        }
                     }else{
                         print("Wrong Input")
                         addqty = (readLine()?.lowercased())!
                     }
-                }else{
-                    print("Wrong Input")
-                    addqty = (readLine()?.lowercased())!
                 }
+                
+                buy(namaMenu: (menuKopteSorted[Int(choose!)!-1].0), qty: Double(addqty)!, harga: Double((menuKopteSorted[Int(choose!)!-1].1)), storeName: resto[3])
+                print("Thankyou For Ordering")
             }
-            
-            buy(namaMenu: (menuKopteSorted[Int(choose!)!-1].0), qty: Double(addqty)!, harga: Double((menuKopteSorted[Int(choose!)!-1].1)), storeName: resto[3])
-            print("Thankyou For Ordering")
         }
+        
     }
     else if(choose == "5"){
-        getMenu(menu: menuXiangSorted, storeName: resto[4])
-        choose = readLine()?.lowercased()
-        while((Int(choose ?? "") ?? 0 > menuXiang.count || Int(choose ?? "") ?? 0 < 1) && choose?.lowercased() != "b"){
-            print("Wrong Choice")
+        while(true){
+            getMenu(menu: menuXiangSorted, storeName: resto[4])
             choose = readLine()?.lowercased()
-        }
-        if(choose?.lowercased() == "b"){
-            continue
-        }else if let check = Int(choose ?? ""){
-            print("""
-                  \(menuXiangSorted[Int(choose!)!-1].0) @ \(menuXiangSorted[Int(choose!)!-1].1)
-                  How many \(menuXiangSorted[Int(choose!)!-1].0) do you want to buy?
-                  """)
-            addqty = (readLine()?.lowercased())!
-            while(true){
-                if let check = Double(addqty){
-                    if(Double(addqty)! > 0){
-                        break
+            while((Int(choose ?? "") ?? 0 > menuXiang.count || Int(choose ?? "") ?? 0 < 1) && choose?.lowercased() != "b"){
+                print("Wrong Choice")
+                choose = readLine()?.lowercased()
+            }
+            if(choose?.lowercased() == "b"){
+                break
+            }else if let check = Int(choose ?? ""){
+                print("""
+                      \(menuXiangSorted[Int(choose!)!-1].0) @ \(menuXiangSorted[Int(choose!)!-1].1)
+                      How many \(menuXiangSorted[Int(choose!)!-1].0) do you want to buy?
+                      """)
+                addqty = (readLine()?.lowercased())!
+                while(true){
+                    if let check = Double(addqty){
+                        if(Double(addqty)! > 0){
+                            break
+                        }else{
+                            print("Wrong Input")
+                            addqty = (readLine()?.lowercased())!
+                        }
                     }else{
                         print("Wrong Input")
                         addqty = (readLine()?.lowercased())!
                     }
-                }else{
-                    print("Wrong Input")
-                    addqty = (readLine()?.lowercased())!
                 }
+                
+                buy(namaMenu: (menuXiangSorted[Int(choose!)!-1].0), qty: Double(addqty)!, harga: Double((menuXiangSorted[Int(choose!)!-1].1)), storeName: resto[4])
+                print("Thankyou For Ordering")
             }
-            
-            buy(namaMenu: (menuXiangSorted[Int(choose!)!-1].0), qty: Double(addqty)!, harga: Double((menuXiangSorted[Int(choose!)!-1].1)), storeName: resto[4])
-            print("Thankyou For Ordering")
         }
+        
     }
     else if(choose?.lowercased() == "s"){
         
@@ -464,6 +479,7 @@ func paymentScreen(totalAmount:Double){
     
     Press [return] to go back to main screen
     """)
+    cartArr.removeAll()
 }
 
 
