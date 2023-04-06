@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		047F804529B0D0EA003E15C7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F804429B0D0EA003E15C7 /* main.swift */; };
+		04FE1E8229D66F4300BA2859 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE1E8129D66F4300BA2859 /* menu.swift */; };
+		04FE1E8429D66F6400BA2859 /* shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE1E8329D66F6400BA2859 /* shop.swift */; };
+		04FE1E8629D676D800BA2859 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE1E8529D676D800BA2859 /* item.swift */; };
+		04FE1E8829D67F0900BA2859 /* cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE1E8729D67F0900BA2859 /* cart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,10 @@
 /* Begin PBXFileReference section */
 		047F804129B0D0EA003E15C7 /* AFL1-0706012110009-StefanusReynaldo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "AFL1-0706012110009-StefanusReynaldo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		047F804429B0D0EA003E15C7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		04FE1E8129D66F4300BA2859 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
+		04FE1E8329D66F6400BA2859 /* shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shop.swift; sourceTree = "<group>"; };
+		04FE1E8529D676D800BA2859 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
+		04FE1E8729D67F0900BA2859 /* cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 			isa = PBXGroup;
 			children = (
 				047F804429B0D0EA003E15C7 /* main.swift */,
+				04FE1E8129D66F4300BA2859 /* menu.swift */,
+				04FE1E8329D66F6400BA2859 /* shop.swift */,
+				04FE1E8529D676D800BA2859 /* item.swift */,
+				04FE1E8729D67F0900BA2859 /* cart.swift */,
 			);
 			path = "AFL1-0706012110009-StefanusReynaldo";
 			sourceTree = "<group>";
@@ -120,6 +132,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FE1E8629D676D800BA2859 /* item.swift in Sources */,
+				04FE1E8429D66F6400BA2859 /* shop.swift in Sources */,
+				04FE1E8229D66F4300BA2859 /* menu.swift in Sources */,
+				04FE1E8829D67F0900BA2859 /* cart.swift in Sources */,
 				047F804529B0D0EA003E15C7 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
